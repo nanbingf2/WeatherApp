@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: WeatherApp
+  redis:
+    host: 192.168.25.103
+    port: 6379
