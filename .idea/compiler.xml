@@ -6,10 +6,23 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="weather-api" />
+        <module name="weather-city-collection" />
+        <module name="weather-collection" />
+        <module name="weather-eureka-server" />
+        <module name="weather-gateway-zuul" />
+        <module name="weather-report" />
         <module name="weather-simple" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="weather-api" target="1.8" />
+      <module name="weather-city-collection" target="1.8" />
+      <module name="weather-collection" target="1.8" />
+      <module name="weather-config-server" target="1.8" />
+      <module name="weather-eureka-server" target="1.8" />
+      <module name="weather-gateway-zuul" target="1.8" />
+      <module name="weather-report" target="1.8" />
       <module name="weather-simple" target="1.8" />
     </bytecodeTargetLevel>
   </component>

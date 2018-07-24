@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>天气预报系统</title>
+</head>
+<body>
+<h3>天气预报系统</h3>
+<select id="selectedId">
+    <option th:each="city : ${cityList}"
+            th:value="${city.cityId}" th:text="${city.cityName}"
+            th:selected="${city.cityId eq cityId}"></option>
+</select>
+<div th:if="${weather}!=null">
+    <h1 th:text="${weather.city}"></h1>
+    <p>
+        空气质量指数：<span th:text="${weather.aqi}"></span>
+    </p>
+    <P>
+        当前温度：<span th:text="${weather.wendu}"></span>
+    </P>
+    <p>
+        温馨提示：<span th:text="${weather.ganmao}"></span>
+    </p>
+
+    <div th:each="forecast : ${weather.forecast}">
+        <div>
+            <p th:text="${forecast.date}"></p>
+            <p th:text="${forecast.type}"></p>
+            <p th:text="${forecast.high}"></p>
+            <p th:text="${forecast.low}"></p>
+            <p th:text="${forecast.fengxiang}"></p>
+            <p th:text="${forecast.fengli}"></p>
+        </div>
+    </div>
+</div>
+<div th:if="${weather}==null">
+    <p>天气查询服务暂不可用</p>
+</div>
+</body>
+</html>

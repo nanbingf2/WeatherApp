@@ -5,6 +5,8 @@ import com.rogercw.weather.service.CityDataService;
 import com.rogercw.weather.service.WeatherService;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.quartz.QuartzJobBean;
 
@@ -17,6 +19,7 @@ import java.util.List;
  * 天气数据同步任务
  */
 public class WeatherDataSnycJob extends QuartzJobBean {
+    private final Logger logger=LoggerFactory.getLogger(WeatherDataSnycJob.class);
     @Autowired
     private CityDataService cityDataService;
     @Autowired
@@ -35,6 +38,7 @@ public class WeatherDataSnycJob extends QuartzJobBean {
         if (cityList != null) {
             cityList.forEach(city -> {
                 weatherService.weatherSyncByCityId(city.getCityId());
+                logger.info(city.getCityName()+"天气数据同步完成");
             });
         }
     }

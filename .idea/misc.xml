@@ -4,6 +4,12 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/weather-simple/pom.xml" />
+        <option value="$PROJECT_DIR$/weather-collection/pom.xml" />
+        <option value="$PROJECT_DIR$/weather-api/pom.xml" />
+        <option value="$PROJECT_DIR$/weather-city-collection/pom.xml" />
+        <option value="$PROJECT_DIR$/weather-report/pom.xml" />
+        <option value="$PROJECT_DIR$/weather-eureka-server/pom.xml" />
+        <option value="$PROJECT_DIR$/weather-gateway-zuul/pom.xml" />
       </list>
     </option>
   </component>
